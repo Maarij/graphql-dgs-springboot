@@ -33,9 +33,9 @@ public class FakeMobileAppDataResolver {
 
     private boolean matchFilter(MobileAppFilter mobileAppFilter, MobileApp mobileApp) {
         var isAppMatch = StringUtils.containsIgnoreCase(mobileApp.getName(), StringUtils.defaultIfBlank(mobileAppFilter.getName(), StringUtils.EMPTY))
-                && StringUtils.containsIgnoreCase(mobileApp.getVersion(), StringUtils.defaultIfBlank(mobileAppFilter.getVersion(), StringUtils.EMPTY));
-//                && mobileApp.getReleaseDate().isAfter(Optional.ofNullable(mobileAppFilter.getReleasedAfter()).orElse(LocalDate.MIN))
-//                && mobileApp.getDownloaded() >= Optional.ofNullable(mobileAppFilter.getMinimumDownload()).orElse(0);
+                && StringUtils.containsIgnoreCase(mobileApp.getVersion(), StringUtils.defaultIfBlank(mobileAppFilter.getVersion(), StringUtils.EMPTY))
+                && mobileApp.getReleaseDate().isAfter(Optional.ofNullable(mobileAppFilter.getReleasedAfter()).orElse(LocalDate.MIN))
+                && mobileApp.getDownloaded() >= Optional.ofNullable(mobileAppFilter.getMinimumDownload()).orElse(0);
 
         if (!isAppMatch) {
             return false;
