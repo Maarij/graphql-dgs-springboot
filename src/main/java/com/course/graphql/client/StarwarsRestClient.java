@@ -59,8 +59,7 @@ public class StarwarsRestClient {
         var jsonNode = objectMapper.readTree(json);
         var data = jsonNode.at("/data/allPlanets/planets");
 
-        return objectMapper.readValue(data.toString(),
-                new TypeReference<>() {});
+        return objectMapper.readValue(data.toString(), new TypeReference<>() {});
     }
 
     public StarshipResponse oneStarshipFixed() throws JsonProcessingException {
