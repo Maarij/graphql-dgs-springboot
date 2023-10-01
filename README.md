@@ -9,3 +9,5 @@ Udemy: https://www.udemy.com/course/code-graphql-application-with-java-spring-bo
 DGS: https://netflix.github.io/dgs/getting-started/
 
 Apollo: https://www.apollographql.com/docs/
+* Download schema for apollo-client
+  * `gradle downloadApolloSchema --endpoint="http://localhost:8080/graphql" --schema="lib/src/main/graphql/com/course/graphqlclient/schema.json`
